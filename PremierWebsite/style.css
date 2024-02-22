@@ -1,0 +1,847 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: #f8f8f8;
+    position: relative;
+    padding-top: 0.1px; /*CSS ka bug hai todha sa gap diya hai to separate main and nav.*/
+}
+
+#nav{
+    height: 12vh;
+    width: 100%;
+    /* background-color: red; */
+    margin-top: 40px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav h1{
+    height: 100%;
+    width: 20%;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monument;
+    font-size: 2.8vw;
+    letter-spacing: -1px;
+    position: relative;
+}
+
+#nav h1::after{
+    content: "©️";
+    font-size: 1.4vw;
+    font-weight: 200;
+    position: absolute;
+    top: 12%;
+    right: 6%;
+}
+
+#nav h1::before{
+    content: "model management";
+    font-size: 1vw;
+    font-weight: 200;
+    font-family: sans-serif;
+    position: absolute;
+    letter-spacing: 0.1px;
+    color: #666;
+    top: 50px;
+    right: 50px;
+}
+
+#nav h2{
+    height: 100%;
+    width: 20%;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid #000;
+    font-size: 1.7vw;
+    font-weight: 600;
+}
+
+#nav h2:nth-child(4){
+    width: 29%;
+}
+
+#nav h2:nth-child(5){
+    width: 10%;
+}
+
+#nav h3{
+    display: none;
+}
+
+#center{
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    padding: 4vw 4vw 3vw 4vw;
+    position: relative;
+}
+
+#content{
+    height: 100%;
+    width: 100%;
+    /* background-color: blue; */
+    position: relative;
+}
+
+#content video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#overlay{
+    height: 55%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    /* background-color: red; */
+    padding: 3vw;
+    color: #fff;
+}
+
+#over-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2vw;
+}
+
+#over-1 h1{
+    font-family: monument;
+    font-size: 3.6vw;
+    /* mix-blend-mode: difference; */
+}
+
+#over-1 h2{
+    font-size: 1vw;
+    padding: 1.8vw 2vw; /*1vw = 11.5px*/
+    /* background-color: blue; */
+    border-radius: 50%;
+    border: 1px solid #fff;
+    border-bottom: 3px solid white;
+}
+
+#over-2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid white;
+    padding: 1.5vw 0;
+}
+
+#over-2 h4{
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+
+#over-2 img{
+    height: 3vw;
+}
+
+#scroll{
+    height: 45vh;
+    width: 100%;
+    /* background-color: red; */
+    white-space: nowrap; /*next three are for scrolling*/
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-bottom: 2vw;
+}
+
+#container{
+    height: 100%;
+    width: 110%;
+    /* background-color: yellow; */
+    padding: 0 1vw 3vw 1vw;
+    display: inline-block; /*This is also for scrolling*/
+    animation-name: anime;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#scroll img{
+    /* display: none; */
+    /* height: 95%; */
+    width: 17%;
+    border-radius: 50%;
+    aspect-ratio: 1/1;  
+    object-fit: cover;
+    margin: 1vw;
+    margin-right: 2.5vw;
+}
+
+#scroll img:nth-last-child(1){
+    object-fit: cover;
+    object-position: top;
+}
+
+#scroll img:nth-child(5){
+    object-fit: cover;
+    object-position: top;
+}
+
+#scroll img:nth-child(2){
+    object-fit: cover;
+    object-position: 30% 25%;
+}
+
+@keyframes anime {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#alphabet{
+    height: 10vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    margin-top: 1vw;
+}
+
+#alphabet h5{
+    font-size: 1.7vw;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: italic;
+    border-bottom: 2px solid black;
+    letter-spacing: 3px;
+    margin-right: 1.5vw;
+}
+
+#alphabet h6{
+    font-size: 1vw;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 3px;
+    /* background-color: yellow; */
+    padding: 0.6vw 0.7vw;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    transition: all ease 0.2s;
+}
+
+#alphabet h6:hover{
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+#page2{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 3vw 4vw;
+    margin-top: 3vh;
+    /* background-color: red; */
+}
+
+#page2-part1{
+    height: 100%;
+    width: 60%;
+    background-image: url(https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: 20% 70%;
+}
+
+#page2-part2{
+    height: 100%;
+    width: 40%;
+    margin-left: 3vw;
+}
+
+#page2-part2 img{
+    object-fit: cover;
+    object-position: 20% 10%;
+    height: 75%;
+    width: 100%;
+}
+
+#page2-part2 h4{
+    font-size: 1.5vw;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.page2-info{
+    padding: 1.4vw 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#page3{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 3vw 4vw;
+    position: relative;
+}
+
+#heading h1{
+    padding: 0 4vw;
+    font-weight: 700;
+    font-family: sans-serif;
+    letter-spacing: -1px;
+    font-size: 3vw;
+}
+
+#content-2{
+    display: flex;
+    width: 40%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#textInACircle{
+    height: 65%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#textInACircle img{
+    height: 70%;
+    width: 60%;
+}
+
+#paragraph{
+    height: 35%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#paragraph h3{
+    font-size: 1.5vw;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+#image{
+    height: 100%;
+    width: 60%;
+    background-image: url(https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: top;
+}
+
+#page4{
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    padding: 0 4vw 2vw 4vw;
+}
+
+#page-4-Image{
+    height: 100%;
+    width: 100%;
+    background-image: url(https://images.unsplash.com/photo-1628102160424-5f4ab3404829?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: 30% 20%;
+    background-size: cover;
+}
+
+#page-5{
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    position: relative;
+    padding: 4vw;
+}
+
+#page-5>h1{
+    text-align: center;
+    font-family: monument;
+    text-transform: uppercase;
+    font-size: 3vw;
+    margin-bottom: 7vh;
+}
+
+.elem{
+    height: 16vh;
+    width: 100%;
+    /* background-color: red; */
+    border-top: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+    font-family: sans-serif;
+    position: relative;
+    transition: all ease 0.5s;
+}
+
+.elem img{
+    object-fit: cover;
+    object-position: top;
+    height: 100px;
+    width: 120px;
+    position: absolute;  /*Image ease in effect new thing learned img part-1*/
+    left: 20%;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.elem h4{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 1.1vw;
+    text-transform: uppercase;
+    width: 6%;
+    font-weight: 500;
+}
+
+.elem:nth-last-child(1){
+    border-bottom: 2px solid black;
+}
+
+.elem-part2{
+    margin-top: 2vh;
+    width: 45%;
+    margin-bottom: 2vh;
+    /* background-color: red; */
+}
+
+.elem-part2 h1{
+    font-size: 2.5vw;
+    font-weight: 500;
+}
+
+.elem-part2 h5{
+    font-size: 1vw;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#innerText{
+    position: absolute;
+    left: 25%;
+}
+
+#innerText p{
+    font-size: 0.8vw;
+}
+
+#innerText img{
+    opacity: 0;
+}
+
+.elem:nth-last-child(3) img{ /*To bring in the image from right.*/
+    left: 35%;
+}
+
+.elem:nth-last-child(1) img{
+    left: 35%;
+}
+
+.elem:hover #innerText{
+    opacity: 0;
+}
+
+.elem:hover{
+    background-color: #f8f4f4;
+    cursor: pointer;
+}
+
+.elem:hover img{  /*img part-2 new thing learned*/
+    opacity: 1;
+    left: 25%;
+}
+
+#marque{
+    /* height: 18vh;  */
+    width: 100%;
+    /* background-color: red; */
+    white-space: nowrap;
+    /* overflow-x: auto; Testing ke liye neccesary hai*/
+    padding: 1vw;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    margin-bottom: 2.7vw;
+}
+
+#marque h1{
+    display: inline-block;
+    font-size: 3vw;
+    /* background-color: blue; */
+    margin-right: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: monument;
+    -webkit-text-stroke: 2px black; /*Necessary for making the marque*/
+    color: transparent;
+    animation-name: move;
+    animation-duration: 4.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes move {
+    from{
+        transform: translateX(0);
+    } 
+    to{
+        transform: translateX(calc(-100% - 20px)); /*Jab bhi hum white space nowrap krte hai to by default 4px ka gap aata hai to usse whole number krne ke liya maine usse right se padding dedi 16px ki total 20px hogya ab translateX mai se maine 20px minus krdiya using calc for smooth animiation.*/
+    }   
+}
+
+#page6{
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    padding: 3vw;
+    display: flex;
+}
+
+#page6-left{
+    width: 40%;
+    height: 100%;
+    background-image: url(https://images.unsplash.com/photo-1557977275-d261356f567f?q=80&w=1899&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: top;
+    background-size: cover;
+    margin-right: 4vw;
+}
+
+#page6-right{
+    width: 60%;
+    height: 100%;
+}
+#page6-right-top{
+    width: 100%;
+    height: 40%;
+}
+
+#page6-right-top h1{
+    text-transform: uppercase;
+    font-size: 4vw;
+    font-family: monument;
+    margin-bottom: 1vw;
+}
+
+#page6-right-top h4{
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 1.3vw;
+    margin-bottom: 1.5vw;
+    letter-spacing: 1px;
+}
+
+#page6-right-top h3{
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 1vw;
+    letter-spacing: 1px;
+}
+
+#page6-right-bottom{
+    width: 100%;
+    height: 60%;
+    margin-top: 1.2vw;
+    display: flex;
+    gap: 2vw;
+}
+
+#page6-right-bottom>img{
+    width: 50%;
+    height: 94%;
+    object-fit: cover;
+    object-position: top;
+}
+
+#bottom-image{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2.7vw;
+    padding: 0 3vw 0 3vw;
+}
+
+#bottom-image-div{
+    width: 100%;
+    height: 100%;
+    background-image: url(https://plus.unsplash.com/premium_photo-1669704098750-7cd22c35422b?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: 30% 40%;
+    background-size: cover;
+}
+
+#blog-page{
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    padding: 3vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+#blog-main{
+    height: 100%;
+    width: 20%;
+    padding: 0 4vw;
+}
+
+#blog-text-1{
+    height: 100%;
+    width: 40%;
+    margin-right: 2vw;
+}
+
+.blog-text h1{
+    text-transform: uppercase;
+    font-family: monument;
+}
+
+.blog-text h2{
+    font-family: sans-serif;
+    line-height: 2vw;
+    margin-bottom: 1.1vw;
+}
+
+#blog-text-1 img{
+    object-fit: cover;
+    object-position: top;
+    width: 90%;
+    height: 80%;
+}
+
+#blog-text-2{
+    height: 100%;
+    width: 50%;
+}
+
+#blog-text-2 img{
+    object-fit: cover;
+    object-position: top;
+    width: 80%;
+    height: 80%;
+}
+
+#footer{
+    margin-top: 10vw;
+    height: 40%;
+    width: 100%;
+    /* background-color: red; */
+}
+
+#footerpage{
+    width: 100%;
+    height: 90%;
+    padding-bottom: 0.1px;
+    margin-bottom: 1vw;
+    display: flex;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#footer1{
+    padding: 1.5vw 4vw;
+    width: 40%;
+    height: 100%;
+    border-right: 2px solid black;
+    font-family: monument;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer1 h1{
+    font-size: 2.7vw;
+}
+
+#footer1 h4{
+    margin-top: 1vw;
+    font-weight: 600;
+    font-size: 1.3vw;
+    font-family: sans-serif;
+}
+
+#footer2{
+    width: 20%;
+    height: 100%;
+    border-right: 2px solid black;
+    display: flex;
+    justify-content: center;
+    padding: 1.75vw 4vw;
+}
+
+#footer2 h4{
+    font-size: 1.3vw;
+    font-family: sans-serif;
+    margin-top: 1vw;
+}
+
+#footer3{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3vw 3vw;
+    border-bottom: 2px solid black;
+}
+
+#footer3 h4{
+    font-family: sans-serif;
+    font-size: 1.3vw;
+}
+
+#footer1::after{
+    content: "©️";
+    font-size: 20px;
+    font-weight: 200;
+    position: absolute;
+    top: 8%;
+    left: 48%;
+}
+
+#footer1::before{
+    content: "model management";
+    font-size: 15px;
+    font-weight: 200;
+    font-family: sans-serif;
+    position: absolute;
+    letter-spacing: 0.1px;
+    color: #666;
+    top: 60px;
+    left: 23%;
+}
+
+
+#footer-bias-section{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+}
+
+#footer4{
+    padding: 2vw 3vw;
+    width: 100%;
+    height: 20%;    
+}
+
+#footer4 i{
+    margin-right: 1vw;
+}
+
+#footer4-text{
+    padding: 0.5vw 3vw;
+    height: 40%;
+}
+
+#footer4-text h4{
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+#footer4-text p{
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+@media (max-width:600px) {
+
+    body{
+        overflow-x: hidden;
+    }
+
+    #nav{
+        height: 8vh;
+        margin-top: 20px;
+        padding: 0 4vw;
+    }
+    
+    #nav h1{
+        height: 100%;
+        width: 27%;
+        justify-content: flex-start;
+        font-size: 3.7vw;
+    }
+    
+    #nav h1::after{
+        display: none;
+    }
+    
+    #nav h1::before{
+        display: none;
+    }
+    
+    #nav h2{
+        display: none;
+    }
+      
+    #nav h3{
+        display: block;
+    }
+
+    
+    #center{
+        height: 40%;
+        width: 100%;
+    }
+
+    #overlay{
+        height: fit-content;
+        width: 100%;
+    }
+
+    #over-1{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2vw;
+    }
+
+    #over-1 h1{
+        font-family: monument;
+        font-size: 5vw; 
+    }
+
+    #over-1 h2{
+        font-size: 2vw; 
+    }
+
+    #over-2 h4{
+        font-size: 3vw;
+        letter-spacing: 1px;
+        font-family: sans-serif;
+    }
+
+    #over-2 img{
+        height: 4vw;
+    }
+
+}
